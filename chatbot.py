@@ -116,12 +116,12 @@ class ChatUI(QWidget):
         # تب دوم
         tab2 = QWidget()
         tab2_layout = QVBoxLayout(tab2)
-        tab2_layout.addWidget(QLabel("<!-- اینجا کدهاتو واسه سربرگ دوم وارد کن -->"))
+        tab2_layout.addWidget(QLabel("<!--  اینجا کدهاتو واسه سربرگ دوم وارد کن پوتین ترجمهههه -->"))
 
         # تب سوم
         tab3 = QWidget()
         tab3_layout = QVBoxLayout(tab3)
-        tab3_layout.addWidget(QLabel("<!-- اینجا کدهاتو واسه سربرگ سوم وارد کن -->"))
+        tab3_layout.addWidget(QLabel("<!-- اینجا کدهاتو واسه سربرگ سوم وارد کن نرگسسسسس خلاصه نویسیییییی -->"))
 
         # اضافه کردن تب‌ها
         tabs.addTab(tab1, "سربرگ ۱")
