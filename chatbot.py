@@ -4,11 +4,18 @@ from difflib import get_close_matches
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout,
     QLineEdit, QPushButton, QLabel, QListWidget, QTabWidget,
-    QListWidgetItem, QMessageBox
+    QListWidgetItem, QMessageBox, QTextEdit , QInputDialog
 )
 from PyQt6.QtGui import QFont
 from PyQt6.QtCore import Qt
 
+# برای خلاصه نویسی:
+from hazm import Normalizer, SentenceTokenizer, WordTokenizer
+from langdetect import detect
+from sumy.parsers.plaintext import PlaintextParser
+from sumy.nlp.tokenizers import Tokenizer as SumyTokenizer
+from sumy.summarizers.text_rank import TextRankSummarizer
+import heapq
 
 # --------------------------
 # بخش ۱: کلاس چت‌بات
@@ -43,6 +50,38 @@ class ChatBot:
         self.data['questions'].append({'question': question, 'answer': answer})
         self.save_data()
 
+# --------------------------
+# بخش خلاصه نویسی
+# --------------------------
+def summarize_farsi(text):
+    normalizer = Normalizer()
+    text = normalizer.normalize(text)
+
+    sent_tokenizer = SentenceTokenizer()
+    word_tokenizer = WordTokenizer()
+
+    sentences = sent_tokenizer.tokenize(text)
+    word_freq = {}
+
+    for sent in sentences:
+        words = word_tokenizer.tokenize(sent)
+        for word in words:
+            word_freq[word] = word_freq.get(word, 0) + 1
+
+    sentence_scores = {}
+    for sent in sentences:
+        for word in word_tokenizer.tokenize(sent):
+            if word in word_freq:
+                sentence_scores[sent] = sentence_scores.get(sent, 0) + word_freq[word]
+
+    summary_sentences = heapq.nlargest(2, sentence_scores, key=sentence_scores.get)
+    return " ".join(summary_sentences)
+
+def summarize_english(text):
+    parser = PlaintextParser.from_string(text, SumyTokenizer("english"))
+    summarizer = TextRankSummarizer()
+    summary = summarizer(parser.document, 2)
+    return " ".join([str(sentence) for sentence in summary])
 
 # --------------------------
 # بخش ۲: رابط گرافیکی
@@ -82,6 +121,13 @@ class ChatUI(QWidget):
                 padding: 10px;
                 border-radius: 10px;
             }
+            QTextEdit {
+                background-color: #fff0f5;
+                border: 2px solid #ffb6c1;
+                border-radius: 10px;
+                padding: 8px;
+                font-size: 14px;
+            }
         """)
         self.init_ui()
 
@@ -118,10 +164,27 @@ class ChatUI(QWidget):
         tab2_layout = QVBoxLayout(tab2)
         tab2_layout.addWidget(QLabel("<!--  اینجا کدهاتو واسه سربرگ دوم وارد کن پوتین ترجمهههه -->"))
 
-        # تب سوم
+        # تب سوم (خلاصه نویسی)
         tab3 = QWidget()
         tab3_layout = QVBoxLayout(tab3)
-        tab3_layout.addWidget(QLabel("<!-- اینجا کدهاتو واسه سربرگ سوم وارد کن نرگسسسسس خلاصه نویسیییییی -->"))
+
+        label = QLabel("📝 لطفاً متن فارسی یا انگلیسی را وارد کنید:")
+        tab3_layout.addWidget(label)
+
+        self.text_input = QTextEdit()
+        tab3_layout.addWidget(self.text_input)
+
+        self.summarize_button = QPushButton("خلاصه کن")
+        tab3_layout.addWidget(self.summarize_button)
+
+        self.result_label = QLabel("✅ خلاصه متن:")
+        tab3_layout.addWidget(self.result_label)
+
+        self.result_output = QTextEdit()
+        self.result_output.setReadOnly(True)
+        tab3_layout.addWidget(self.result_output)
+
+        self.summarize_button.clicked.connect(self.summarize_text)
 
         # اضافه کردن تب‌ها
         tabs.addTab(tab1, "سربرگ ۱")
@@ -151,18 +214,36 @@ class ChatUI(QWidget):
         self.chat_area.addItem(item)
 
     def ask_to_learn(self, question):
-        answer, ok = QMessageBox.getText(self, "یادگیری", f"پاسخ مناسب برای '{question}' چیه؟")
+        answer, ok = QInputDialog.getText(self, "یادگیری", f"پاسخ مناسب برای '{question}' چیه؟")
         if ok and answer.strip():
             self.bot.learn_new_answer(question, answer.strip())
             self.add_chat_message("🤖 بات: ممنون! یاد گرفتم.", align=Qt.AlignmentFlag.AlignLeft)
 
+    def summarize_text(self):
+        text = self.text_input.toPlainText().strip()
+        if not text:
+            self.result_output.setPlainText("⛔️ لطفاً متنی وارد کنید.")
+            return
+
+        try:
+            lang = detect(text)
+            if lang == 'fa':
+                summary = summarize_farsi(text)
+                self.result_output.setPlainText("📌 زبان: فارسی\n\n" + summary)
+            elif lang == 'en':
+                summary = summarize_english(text)
+                self.result_output.setPlainText("📌 Language: English\n\n" + summary)
+            else:
+                self.result_output.setPlainText("⛔️ زبان پشتیبانی نمی‌شود.")
+        except Exception as e:
+            self.result_output.setPlainText(f"⚠️ خطا در پردازش: {e}")
 
 # --------------------------
 # بخش ۳: اجرای برنامه
 # --------------------------
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    bot = ChatBot(r"C:\Users\pc\documents\university file\final project - Copy\chat_data.json")
+    bot = ChatBot(r"C:\Users\pc\documents\university file\final project\data.json")
     window = ChatUI(bot)
     window.show()
     sys.exit(app.exec())
