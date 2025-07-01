@@ -1,25 +1,23 @@
+import pandas as pd
 import json
 import sys
+import heapq
 from difflib import get_close_matches
+from langdetect import detect
+
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout,
     QLineEdit, QPushButton, QLabel, QListWidget, QTabWidget,
-    QListWidgetItem, QMessageBox, QTextEdit , QInputDialog
+    QListWidgetItem, QMessageBox, QTextEdit, QInputDialog
 )
 from PyQt6.QtGui import QFont
 from PyQt6.QtCore import Qt
 
-# برای خلاصه نویسی:
 from hazm import Normalizer, SentenceTokenizer, WordTokenizer
-from langdetect import detect
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer as SumyTokenizer
 from sumy.summarizers.text_rank import TextRankSummarizer
-import heapq
 
-# --------------------------
-# بخش ۱: کلاس چت‌بات
-# --------------------------
 class ChatBot:
     def __init__(self, data_path):
         self.data_path = data_path
@@ -50,9 +48,6 @@ class ChatBot:
         self.data['questions'].append({'question': question, 'answer': answer})
         self.save_data()
 
-# --------------------------
-# بخش خلاصه نویسی
-# --------------------------
 def summarize_farsi(text):
     normalizer = Normalizer()
     text = normalizer.normalize(text)
@@ -83,9 +78,10 @@ def summarize_english(text):
     summary = summarizer(parser.document, 2)
     return " ".join([str(sentence) for sentence in summary])
 
-# --------------------------
-# بخش ۲: رابط گرافیکی
-# --------------------------
+# ... تمام importها مثل قبل
+
+# در ادامه بقیه‌ی کد مثل قبل بدون تغییر، تا می‌رسیم به تعریف کلاس ChatUI
+
 class ChatUI(QWidget):
     def __init__(self, bot: ChatBot):
         super().__init__()
@@ -97,7 +93,7 @@ class ChatUI(QWidget):
                 background-color: #ffe4ec;
                 font-family: 'Vazirmatn', sans-serif;
             }
-            QLineEdit {
+            QLineEdit, QTextEdit {
                 background-color: #fff0f5;
                 border: 2px solid #ffb6c1;
                 border-radius: 10px;
@@ -121,26 +117,17 @@ class ChatUI(QWidget):
                 padding: 10px;
                 border-radius: 10px;
             }
-            QTextEdit {
-                background-color: #fff0f5;
-                border: 2px solid #ffb6c1;
-                border-radius: 10px;
-                padding: 8px;
-                font-size: 14px;
-            }
         """)
         self.init_ui()
 
     def init_ui(self):
         main_layout = QVBoxLayout(self)
-
         tabs = QTabWidget()
         tabs.setTabPosition(QTabWidget.TabPosition.North)
 
-        # تب اول (چت بات)
+        # --- سربرگ اول: چت‌بات ---
         tab1 = QWidget()
         tab1_layout = QVBoxLayout(tab1)
-
         header = QLabel("💬 چت با UnderFeel Bot")
         header.setAlignment(Qt.AlignmentFlag.AlignCenter)
         header.setFont(QFont("Arial", 18, QFont.Weight.Bold))
@@ -156,20 +143,32 @@ class ChatUI(QWidget):
         input_layout.addWidget(self.input_field)
         input_layout.addWidget(self.send_button)
         tab1_layout.addLayout(input_layout)
-
         self.send_button.clicked.connect(self.handle_user_input)
 
-        # تب دوم
+        # --- سربرگ دوم: تحلیل احساس ---
         tab2 = QWidget()
         tab2_layout = QVBoxLayout(tab2)
-        tab2_layout.addWidget(QLabel("<!--  اینجا کدهاتو واسه سربرگ دوم وارد کن پوتین ترجمهههه -->"))
 
-        # تب سوم (خلاصه نویسی)
+        label2 = QLabel("🔍 یک جمله بنویس تا احساسشو بفهمیم:")
+        tab2_layout.addWidget(label2)
+
+        self.sentiment_input = QTextEdit()
+        tab2_layout.addWidget(self.sentiment_input)
+
+        self.sentiment_button = QPushButton("احساساتمو تحلیل کن")
+        tab2_layout.addWidget(self.sentiment_button)
+
+        self.sentiment_output = QLabel("✉️ نتیجه نمایش داده می‌شود...")
+        self.sentiment_output.setStyleSheet("font-weight: bold; color: #8b008b;")
+        tab2_layout.addWidget(self.sentiment_output)
+
+        self.sentiment_button.clicked.connect(self.analyze_sentiment)
+
+        # --- سربرگ سوم: خلاصه‌ساز ---
         tab3 = QWidget()
         tab3_layout = QVBoxLayout(tab3)
-
-        label = QLabel("📝 لطفاً متن فارسی یا انگلیسی را وارد کنید:")
-        tab3_layout.addWidget(label)
+        label3 = QLabel("📝 لطفاً متن فارسی یا انگلیسی را وارد کنید:")
+        tab3_layout.addWidget(label3)
 
         self.text_input = QTextEdit()
         tab3_layout.addWidget(self.text_input)
@@ -186,26 +185,25 @@ class ChatUI(QWidget):
 
         self.summarize_button.clicked.connect(self.summarize_text)
 
-        # اضافه کردن تب‌ها
-        tabs.addTab(tab1, "سربرگ ۱")
-        tabs.addTab(tab2, "سربرگ ۲")
-        tabs.addTab(tab3, "سربرگ ۳")
+        # افزودن تب‌ها
+        tabs.addTab(tab1, "چت بات")
+        tabs.addTab(tab2, "تحلیل احساس")
+        tabs.addTab(tab3, "خلاصه‌ساز")
         main_layout.addWidget(tabs)
 
     def handle_user_input(self):
-        user_text = self.input_field.text().strip().lower()
+        user_text = self.input_field.text().strip()
         if not user_text:
             return
 
-        self.add_chat_message(f"🧑‍💻 شما: {user_text}", align=Qt.AlignmentFlag.AlignRight)
+        self.add_chat_message(f"🧑‍💻 شما: {user_text}", Qt.AlignmentFlag.AlignRight)
         self.input_field.clear()
 
         response = self.bot.get_response(user_text)
-
         if response:
-            self.add_chat_message(f"🤖 بات: {response}", align=Qt.AlignmentFlag.AlignLeft)
+            self.add_chat_message(f"🤖 بات: {response}", Qt.AlignmentFlag.AlignLeft)
         else:
-            self.add_chat_message("🤖 بات: جواب اینو بلد نیستم، لطفا بهم یاد بده.", align=Qt.AlignmentFlag.AlignLeft)
+            self.add_chat_message("🤖 بات: جواب اینو بلد نیستم، لطفا یادم بده.", Qt.AlignmentFlag.AlignLeft)
             self.ask_to_learn(user_text)
 
     def add_chat_message(self, text, align):
@@ -217,7 +215,7 @@ class ChatUI(QWidget):
         answer, ok = QInputDialog.getText(self, "یادگیری", f"پاسخ مناسب برای '{question}' چیه؟")
         if ok and answer.strip():
             self.bot.learn_new_answer(question, answer.strip())
-            self.add_chat_message("🤖 بات: ممنون! یاد گرفتم.", align=Qt.AlignmentFlag.AlignLeft)
+            self.add_chat_message("🤖 بات: ممنون! یاد گرفتم.", Qt.AlignmentFlag.AlignLeft)
 
     def summarize_text(self):
         text = self.text_input.toPlainText().strip()
@@ -238,12 +236,37 @@ class ChatUI(QWidget):
         except Exception as e:
             self.result_output.setPlainText(f"⚠️ خطا در پردازش: {e}")
 
+    def analyze_sentiment(self):
+        text = self.sentiment_input.toPlainText().strip()
+        if not text:
+            self.sentiment_output.setText("⛔️ لطفاً جمله‌ای وارد کنید.")
+            return
+
+        # واژگان نمونه ساده برای تحلیل احساس
+        positive_words = ['عالی', 'خوشحال', 'شاد', 'موفق', 'زیبا', 'دلنشین', 'عاشق', 'دوست‌داشتنی']
+        negative_words = ['بد', 'ناراحت', 'غمگین', 'افتضاح', 'تنفر', 'خسته', 'ضعیف', 'عصبانی']
+
+        normalizer = Normalizer()
+        tokenizer = WordTokenizer()
+        text = normalizer.normalize(text)
+        words = tokenizer.tokenize(text)
+
+        pos_score = sum(word in positive_words for word in words)
+        neg_score = sum(word in negative_words for word in words)
+
+        if pos_score > neg_score:
+            self.sentiment_output.setText("😊 احساس جمله مثبت بود.")
+        elif neg_score > pos_score:
+            self.sentiment_output.setText("😞 احساس جمله منفی بود.")
+        else:
+            self.sentiment_output.setText("😐 احساس خاصی تشخیص داده نشد (خنثی).")
+
 # --------------------------
-# بخش ۳: اجرای برنامه
+# اجرای برنامه
 # --------------------------
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    bot = ChatBot(r"C:\Users\pc\documents\university file\final project\data.json")
+    bot = ChatBot(r"C:\Users\pc\Documents\university file\final project\data.json")
     window = ChatUI(bot)
     window.show()
     sys.exit(app.exec())
