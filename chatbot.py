@@ -1,10 +1,12 @@
-import pandas as pd
+# ایمپورت کردن کتابخانه‌های مورد نیاز
 import json
 import sys
 import heapq
+import pandas as pd
 from difflib import get_close_matches
 from langdetect import detect
 
+# کتابخانه‌های رابط کاربری گرافیکی (PyQt6)
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout,
     QLineEdit, QPushButton, QLabel, QListWidget, QTabWidget,
@@ -13,16 +15,25 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtGui import QFont
 from PyQt6.QtCore import Qt
 
+# کتابخانه‌های زبان فارسی (Hazm)
 from hazm import Normalizer, SentenceTokenizer, WordTokenizer
+
+# کتابخانه خلاصه‌سازی متن انگلیسی (Sumy)
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer as SumyTokenizer
 from sumy.summarizers.text_rank import TextRankSummarizer
 
+# بارگذاری دیتاست احساسات
+df = pd.read_csv(r'C:\Users\pc\Documents\university file\final project\emotion_dataset.csv')
+
+
+# تعریف کلاس چت‌بات
 class ChatBot:
     def __init__(self, data_path):
         self.data_path = data_path
         self.data = self.load_data()
 
+    # بارگذاری داده‌های سوال و جواب از فایل JSON
     def load_data(self):
         try:
             with open(self.data_path, 'r', encoding='utf-8') as f:
@@ -30,10 +41,12 @@ class ChatBot:
         except (FileNotFoundError, json.JSONDecodeError):
             return {"questions": []}
 
+    # ذخیره داده‌های یادگرفته‌شده در فایل
     def save_data(self):
         with open(self.data_path, 'w', encoding='utf-8') as f:
             json.dump(self.data, f, indent=2, ensure_ascii=False)
 
+    # پاسخ دادن به سوال کاربر با تطبیق سوالات قبلی
     def get_response(self, user_input: str) -> str:
         questions = [q['question'] for q in self.data['questions']]
         best_match = get_close_matches(user_input, questions, n=1, cutoff=0.6)
@@ -44,10 +57,13 @@ class ChatBot:
                     return q['answer']
         return None
 
+    # یادگیری پاسخ جدید در صورت بلد نبودن
     def learn_new_answer(self, question: str, answer: str):
         self.data['questions'].append({'question': question, 'answer': answer})
         self.save_data()
 
+
+# تابع خلاصه‌سازی متن فارسی با استفاده از توکن‌سازی و وزن‌دهی به جملات
 def summarize_farsi(text):
     normalizer = Normalizer()
     text = normalizer.normalize(text)
@@ -72,22 +88,24 @@ def summarize_farsi(text):
     summary_sentences = heapq.nlargest(2, sentence_scores, key=sentence_scores.get)
     return " ".join(summary_sentences)
 
+
+# تابع خلاصه‌سازی متن انگلیسی با الگوریتم TextRank
 def summarize_english(text):
     parser = PlaintextParser.from_string(text, SumyTokenizer("english"))
     summarizer = TextRankSummarizer()
     summary = summarizer(parser.document, 2)
     return " ".join([str(sentence) for sentence in summary])
 
-# ... تمام importها مثل قبل
 
-# در ادامه بقیه‌ی کد مثل قبل بدون تغییر، تا می‌رسیم به تعریف کلاس ChatUI
-
+# رابط کاربری برنامه با استفاده از PyQt6
 class ChatUI(QWidget):
     def __init__(self, bot: ChatBot):
         super().__init__()
         self.bot = bot
-        self.setWindowTitle("UnderFeel")
-        self.setMinimumSize(500, 600)
+        self.setWindowTitle("UnderFeel")  # عنوان پنجره
+        self.setMinimumSize(500, 600)     # اندازه حداقل پنجره
+
+        # اعمال استایل گرافیکی با CSS داخلی
         self.setStyleSheet("""
             QWidget {
                 background-color: #ffe4ec;
@@ -120,12 +138,12 @@ class ChatUI(QWidget):
         """)
         self.init_ui()
 
+    # ساخت رابط کاربری اصلی شامل سه تب
     def init_ui(self):
         main_layout = QVBoxLayout(self)
         tabs = QTabWidget()
-        tabs.setTabPosition(QTabWidget.TabPosition.North)
 
-        # --- سربرگ اول: چت‌بات ---
+        # تب اول: چت‌بات
         tab1 = QWidget()
         tab1_layout = QVBoxLayout(tab1)
         header = QLabel("💬 چت با UnderFeel Bot")
@@ -145,10 +163,9 @@ class ChatUI(QWidget):
         tab1_layout.addLayout(input_layout)
         self.send_button.clicked.connect(self.handle_user_input)
 
-        # --- سربرگ دوم: تحلیل احساس ---
+        # تب دوم: تحلیل احساسات
         tab2 = QWidget()
         tab2_layout = QVBoxLayout(tab2)
-
         label2 = QLabel("🔍 یک جمله بنویس تا احساسشو بفهمیم:")
         tab2_layout.addWidget(label2)
 
@@ -164,7 +181,7 @@ class ChatUI(QWidget):
 
         self.sentiment_button.clicked.connect(self.analyze_sentiment)
 
-        # --- سربرگ سوم: خلاصه‌ساز ---
+        # تب سوم: خلاصه‌ساز متن
         tab3 = QWidget()
         tab3_layout = QVBoxLayout(tab3)
         label3 = QLabel("📝 لطفاً متن فارسی یا انگلیسی را وارد کنید:")
@@ -185,12 +202,13 @@ class ChatUI(QWidget):
 
         self.summarize_button.clicked.connect(self.summarize_text)
 
-        # افزودن تب‌ها
+        # اضافه کردن تب‌ها به صفحه اصلی
         tabs.addTab(tab1, "چت بات")
         tabs.addTab(tab2, "تحلیل احساس")
         tabs.addTab(tab3, "خلاصه‌ساز")
         main_layout.addWidget(tabs)
 
+    # تابع ارسال پیام در چت‌بات
     def handle_user_input(self):
         user_text = self.input_field.text().strip()
         if not user_text:
@@ -206,17 +224,20 @@ class ChatUI(QWidget):
             self.add_chat_message("🤖 بات: جواب اینو بلد نیستم، لطفا یادم بده.", Qt.AlignmentFlag.AlignLeft)
             self.ask_to_learn(user_text)
 
+    # اضافه کردن پیام به رابط چت
     def add_chat_message(self, text, align):
         item = QListWidgetItem(text)
         item.setTextAlignment(align)
         self.chat_area.addItem(item)
 
+    # دریافت پاسخ مناسب از کاربر در صورت بلد نبودن بات
     def ask_to_learn(self, question):
         answer, ok = QInputDialog.getText(self, "یادگیری", f"پاسخ مناسب برای '{question}' چیه؟")
         if ok and answer.strip():
             self.bot.learn_new_answer(question, answer.strip())
             self.add_chat_message("🤖 بات: ممنون! یاد گرفتم.", Qt.AlignmentFlag.AlignLeft)
 
+    # خلاصه‌سازی متن بر اساس زبان شناسایی‌شده
     def summarize_text(self):
         text = self.text_input.toPlainText().strip()
         if not text:
@@ -236,34 +257,59 @@ class ChatUI(QWidget):
         except Exception as e:
             self.result_output.setPlainText(f"⚠️ خطا در پردازش: {e}")
 
+    # تحلیل احساسات با استفاده از کلمات موجود در دیتاست
     def analyze_sentiment(self):
         text = self.sentiment_input.toPlainText().strip()
         if not text:
             self.sentiment_output.setText("⛔️ لطفاً جمله‌ای وارد کنید.")
             return
 
-        # واژگان نمونه ساده برای تحلیل احساس
-        positive_words = ['عالی', 'خوشحال', 'شاد', 'موفق', 'زیبا', 'دلنشین', 'عاشق', 'دوست‌داشتنی']
-        negative_words = ['بد', 'ناراحت', 'غمگین', 'افتضاح', 'تنفر', 'خسته', 'ضعیف', 'عصبانی']
+        # دسته‌بندی کلمات احساسات از دیتاست
+        uneasy_words = df[df['emotion'] == 'مضطرب']['word'].tolist()
+        envy_words = df[df['emotion'] == 'حسادت']['word'].tolist()
+        angry_words = df[df['emotion'] == 'عصبانی']['word'].tolist()
+        love_words = df[df['emotion'] == 'عشق']['word'].tolist()
+        happy_words = df[df['emotion'] == 'خوشحالی']['word'].tolist()
+        sad_words = df[df['emotion'] == 'ناراحت']['word'].tolist()
+        hate_words = df[df['emotion'] == 'نفرت']['word'].tolist()
 
+        scores = {
+            'مضطرب': 0, 'حسادت': 0, 'عصبانی': 0, 'عشق': 0,
+            'خوشحالی': 0, 'ناراحت': 0, 'نفرت': 0
+        }
+
+        # نرمال‌سازی و توکن‌سازی جمله
         normalizer = Normalizer()
         tokenizer = WordTokenizer()
         text = normalizer.normalize(text)
         words = tokenizer.tokenize(text)
 
-        pos_score = sum(word in positive_words for word in words)
-        neg_score = sum(word in negative_words for word in words)
+        # شمارش کلمات احساس‌برانگیز
+        for word in words:
+            if word in uneasy_words:
+                scores['مضطرب'] += 1
+            elif word in envy_words:
+                scores['حسادت'] += 1
+            elif word in angry_words:
+                scores['عصبانی'] += 1
+            elif word in love_words:
+                scores['عشق'] += 1
+            elif word in happy_words:
+                scores['خوشحالی'] += 1
+            elif word in sad_words:
+                scores['ناراحت'] += 1
+            elif word in hate_words:
+                scores['نفرت'] += 1
 
-        if pos_score > neg_score:
-            self.sentiment_output.setText("😊 احساس جمله مثبت بود.")
-        elif neg_score > pos_score:
-            self.sentiment_output.setText("😞 احساس جمله منفی بود.")
+        # نمایش احساس غالب
+        if all(score == 0 for score in scores.values()):
+            self.sentiment_output.setText("🤔 هیچ احساسی شناسایی نشد.")
         else:
-            self.sentiment_output.setText("😐 احساس خاصی تشخیص داده نشد (خنثی).")
+            dominant_emotion = max(scores, key=scores.get)
+            self.sentiment_output.setText(f"😊 احساس جمله {dominant_emotion} بود.")
 
-# --------------------------
+
 # اجرای برنامه
-# --------------------------
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     bot = ChatBot(r"C:\Users\pc\Documents\university file\final project\data.json")
