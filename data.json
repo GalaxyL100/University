@@ -839,6 +839,201 @@
     { 
       "question": "داده", 
       "answer": "اطلاعات خام و پردازش‌ نشده" 
+    },
+    { 
+      "question": "Sun", 
+      "answer": "The star at the center of our solar system" 
+    },
+    { 
+      "question": "Moon", 
+      "answer": "Earth's natural satellite" 
+    },
+    { 
+      "question": "Star", 
+      "answer": "A luminous sphere of plasma in space" 
+    },
+    { 
+      "question": "Planet", 
+      "answer": "A celestial body orbiting a star" 
+    },
+    { 
+      "question": "Galaxy", 
+      "answer": "A system of stars, gas, and dust bound by gravity" 
+    },
+    { "question": "Universe", 
+    "answer": "All space, time, matter, and energy" 
+    },
+    { 
+      "question": "Atom", 
+      "answer": "The smallest unit of matter" 
+    },
+    { 
+      "question": "Molecule", 
+      "answer": "Two or more atoms bonded together" 
+    },
+    { 
+      "question": "Energy", 
+      "answer": "The ability to do work" 
+    },
+    { 
+      "question": "Force", 
+      "answer": "A push or pull on an object" 
+    },
+    { 
+      "question": "Light", 
+      "answer": "Visible form of electromagnetic radiation" 
+    },
+    { 
+      "question": "Sound", 
+      "answer": "Vibrations that travel through air or another medium" 
+    },
+    { 
+      "question": "Heat", 
+      "answer": "Form of energy related to temperature" 
+    },
+    { 
+      "question": "Water", 
+      "answer": "A liquid essential for life" 
+    },
+    { 
+      "question": "Air", 
+      "answer": "The invisible mixture of gases we breathe" 
+    },
+    { 
+      "question": "Fire", 
+      "answer": "The result of combustion producing heat and light" 
+    },
+    { 
+      "question": "Earth", 
+      "answer": "The planet we live on" 
+    },
+    { 
+      "question": "Ocean", 
+      "answer": "A vast body of saltwater" 
+    },
+    { 
+      "question": "River", 
+      "answer": "A large stream of flowing water" 
+    },
+    { 
+      "question": "Lake", 
+      "answer": "A large body of water surrounded by land" 
+    },
+    { 
+      "question": "Mountain", 
+      "answer": "A large natural elevation of the Earth's surface" 
+    },
+    { 
+      "question": "Valley", 
+      "answer": "A low area between hills or mountains" 
+    },
+    { 
+      "question": "Forest", 
+      "answer": "A large area covered with trees" 
+    },
+    { 
+      "question": "Desert", 
+      "answer": "A dry region with little rainfall" 
+    },
+    { 
+      "question": "Island", 
+      "answer": "A piece of land surrounded by water" 
+    },
+    { 
+      "question": "Bridge", 
+      "answer": "A structure built to cross obstacles" 
+    },
+    { 
+      "question": "Road", 
+      "answer": "A path made for vehicles or walking" 
+    },
+    { 
+      "question": "Car", 
+      "answer": "A motor vehicle with wheels" 
+    },
+    { 
+      "question": "Train", 
+      "answer": "A series of connected vehicles on tracks" 
+    },
+    { 
+      "question": "Ship", 
+      "answer": "A large vessel for traveling on water" 
+    },
+    { 
+      "question": "Plane", 
+      "answer": "An aircraft that flies in the sky" 
+    },
+    { 
+      "question": "Book", 
+      "answer": "A collection of written or printed pages" 
+    },
+    { 
+      "question": "Pen", 
+      "answer": "A tool for writing with ink" 
+    },
+    { 
+      "question": "Paper", 
+      "answer": "Thin material used for writing or printing" 
+    },
+    { 
+      "question": "Chair", 
+      "answer": "A piece of furniture to sit on" 
+    },
+    { 
+      "question": "Table", 
+      "answer": "A flat surface supported by legs" 
+    },
+    { 
+      "question": "Door", 
+      "answer": "A movable barrier for entry or exit" 
+    },
+    { 
+      "question": "Window", 
+      "answer": "An opening in a wall for light and air" 
+    },
+    { 
+      "question": "House", 
+      "answer": "A building where people live" 
+    },
+    { 
+      "question": "School", 
+      "answer": "A place where students learn" 
+    },
+    { 
+      "question": "Teacher", 
+      "answer": "A person who educates others" 
+    },
+    { 
+      "question": "Student", 
+      "answer": "A person who learns in school" 
+    },
+    { 
+      "question": "Doctor", 
+      "answer": "A person trained to treat the sick" 
+    },
+    { 
+      "question": "Nurse", 
+      "answer": "A person who cares for patients" 
+    },
+    { 
+      "question": "Engineer", 
+      "answer": "A professional who designs and builds systems" 
+    },
+    { 
+      "question": "Farmer", 
+      "answer": "A person who grows crops or raises animals" 
+    },
+    { 
+      "question": "Artist", 
+      "answer": "A person who creates art" 
+    },
+    { 
+      "question": "Musician", 
+      "answer": "A person who plays or creates music" 
+    },
+    { 
+      "question": "Writer", 
+      "answer": "A person who composes books or texts" 
     }
 
   ]
