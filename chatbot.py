@@ -6,6 +6,7 @@ import pandas as pd
 from difflib import get_close_matches
 from langdetect import detect
 
+
 # کتابخانه‌های رابط کاربری گرافیکی (PyQt6)
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout,
@@ -29,34 +30,50 @@ df = pd.read_csv(r'C:\Users\pc\Documents\university file\final project\emotion_d
 
 # تعریف کلاس چت‌بات
 class ChatBot:
-    def __init__(self, data_path):
-        self.data_path = data_path
-        self.data = self.load_data()
+    def __init__(self, data_path): # اینجا data_path ادرس فایل دیتاست رو بهش میدیم.
+        self.data_path = data_path 
+        self.data = self.load_data() # تابع load_data رو به خصوصیت data از بات نسبت میده
 
     # بارگذاری داده‌های سوال و جواب از فایل JSON
-    def load_data(self):
+    def load_data(self): 
         try:
-            with open(self.data_path, 'r', encoding='utf-8') as f:
+            with open(self.data_path, 'r', encoding='utf-8') as f: # فایل دیتاست رو وارد میکنه
                 return json.load(f)
-        except (FileNotFoundError, json.JSONDecodeError):
+        except (FileNotFoundError, json.JSONDecodeError): # اگر چیزی پیدا نکرد در نظر میگیره که سوالی نداریم و فایل خالیه
             return {"questions": []}
 
     # ذخیره داده‌های یادگرفته‌شده در فایل
     def save_data(self):
-        with open(self.data_path, 'w', encoding='utf-8') as f:
+        with open(self.data_path, 'w', encoding='utf-8') as f: # برای دخیره کردن داده توی فایل
             json.dump(self.data, f, indent=2, ensure_ascii=False)
 
     # پاسخ دادن به سوال کاربر با تطبیق سوالات قبلی
     def get_response(self, user_input: str) -> str:
-        questions = [q['question'] for q in self.data['questions']]
-        best_match = get_close_matches(user_input, questions, n=1, cutoff=0.6)
+        if not self.data or 'questions' not in self.data:
+            return None
+    
+        user_input_lower = user_input.strip().lower()
+    
+        # جستجوی دقیق
+        for q in self.data['questions']:
+            if q['question'].strip().lower() == user_input_lower:
+                return q['answer']
+    
+        # جستجوی جزئی 
+        for q in self.data['questions']:
+            if user_input_lower in q['question'].strip().lower():
+                return q['answer']
+            
+        for q in self.data['questions']:
 
-        if best_match:
-            for q in self.data['questions']:
-                if q['question'] == best_match[0]:
-                    return q['answer']
-        return None
+            question_words = q['question'].strip().lower().split()
+            user_words = user_input.strip().lower().split()
 
+            common_words = set(question_words) & set(user_words)
+            common_count = len(common_words)
+            if common_count >= 3:
+                return q['answer']
+           
     # یادگیری پاسخ جدید در صورت بلد نبودن
     def learn_new_answer(self, question: str, answer: str):
         self.data['questions'].append({'question': question, 'answer': answer})
