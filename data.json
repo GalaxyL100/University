@@ -21,11 +21,11 @@
       "answer": "سلام! چطوری؟"
     },
     {
-      "question": "نرگس کیه",
+      "question": "نرگس ",
       "answer": "ایشون یکی از والدین من هستن. من توسط نرگس هاشم‌زاده و پوتین (فاطمه ابراهیمی) ساخته شدم!"
     },
     {
-      "question": "پوتین کیه",
+      "question": "پوتین ",
       "answer": "اون که قطعاً پدرمه! من توسط نرگس هاشم‌زاده و پوتین (فاطمه ابراهیمی) ساخته شدم!"
     },
     {
@@ -37,11 +37,11 @@
       "answer": "اسم خدایان رو که انقدر راحت به زبون نمی‌یارن عزیزم!"
     },
     {
-      "question": "استاد عباسی‌راد کیه",
+      "question": " عباسی‌راد ",
       "answer": "ایشون استاد راهنمای پروژه‌ی والدین من هستن! سوالی درباره‌شون داری؟"
     },
     {
-      "question": "استاد صمدزاده کیه",
+      "question": " صمدزاده ",
       "answer": "شایعه‌ها می‌گن ایشون بهترین استاد جهان و آسمان‌ها هستن! ایشون در کتگوری انسانی نمی‌گنجن!"
     },
     {
@@ -73,7 +73,7 @@
       "answer": "اونایی که هات چاکلت دوست دارن، خیلی خوش‌سلیقه‌ان!"
     },
     {
-      "question": "میز چیه",
+      "question": "میز",
       "answer": "میز وسیله‌ایه برای قرار دادن وسایل و انجام دادن یه سری کارا."
     },
     {
@@ -147,6 +147,10 @@
     {
       "question": "بهار",
       "answer": "اولین و زیباترین فصل"
+    },
+    {
+      "question": "زمستان",
+      "answer": " اوه سردم شد "
     },
     {
       "question": "پاییز",
@@ -460,581 +464,629 @@
       "question": "زمین",
       "answer": "سیاره ای که انسان ها روی ان زندگی میکنند"
     },
-    { 
+    {
       "question": "ستاره",
-      "answer": "جرمی آسمانی که از خود نور ساطع می‌کند" 
+      "answer": "جرمی آسمانی که از خود نور ساطع می‌کند"
     },
     {
       "question": "سیاره",
-      "answer": "جرمی آسمانی که به دور ستاره می‌چرخد" 
+      "answer": "جرمی آسمانی که به دور ستاره می‌چرخد"
     },
     {
       "question": "کهکشان",
-      "answer": "مجموعه‌ای عظیم از ستارگان و سیارات" 
-    },
-    { 
-      "question": "مریخ",
-      "answer": "چهارمین سیاره منظومه شمسی" 
+      "answer": "مجموعه‌ای عظیم از ستارگان و سیارات"
     },
     {
-      "question": "زهره", 
+      "question": "مریخ",
+      "answer": "چهارمین سیاره منظومه شمسی"
+    },
+    {
+      "question": "زهره",
       "answer": "دومین سیاره منظومه شمسی"
     },
     {
       "question": "عطارد",
-      "answer": "نزدیک‌ترین سیاره به خورشید" 
+      "answer": "نزدیک‌ترین سیاره به خورشید"
     },
     {
       "question": "مشتری",
-      "answer": "بزرگ‌ترین سیاره منظومه شمسی" 
+      "answer": "بزرگ‌ترین سیاره منظومه شمسی"
     },
     {
       "question": "زحل",
-      "answer": "سیاره‌ای با حلقه‌های زیبا" 
-    },
-    { 
-      "question": "اورانوس", 
-      "answer": "سیاره‌ای یخی با رنگ آبی کم‌رنگ"
-    },
-    { 
-      "question": "نپتون", 
-      "answer": "دورترین سیاره منظومه شمسی" 
-    },
-    { 
-      "question": "تلسکوپ", 
-      "answer": "ابزاری برای مشاهده اجرام آسمانی" 
-    },
-    { 
-      "question": "میکروسکوپ", 
-      "answer": "ابزاری برای دیدن اجسام بسیار کوچک" 
-    },
-    { 
-      "question": "سلول", 
-      "answer": "واحد سازنده موجودات زنده" 
-    },
-    { 
-      "question": "ژن", 
-      "answer": "بخش کوچک DNA که ویژگی‌ها را تعیین می‌کند" 
-    },
-    { 
-      "question": "ویروس", 
-      "answer": "عامل بیماری‌زا که در سلول تکثیر می‌شود" 
-    },
-    { 
-      "question": "باکتری", 
-      "answer": "میکروارگانیسم تک‌سلولی بسیار کوچک" 
-    },
-    { 
-      "question": "انرژی", 
-      "answer": "توانایی انجام کار یا حرکت" 
-    },
-    { 
-      "question": "نور", 
-      "answer": "شکلی از انرژی که دیده می‌شود" 
-    },
-    { 
-      "question": "صوت", 
-      "answer": "امواجی که از ارتعاش اجسام ایجاد می‌شود" 
-    },
-    { 
-      "question": "حرارت", 
-      "answer": "شکل انرژی مربوط به گرما" 
+      "answer": "سیاره‌ای با حلقه‌های زیبا"
     },
     {
-      "question": "فشار", 
-      "answer": "نیروی وارد شده بر سطح" 
+      "question": "اورانوس",
+      "answer": "سیاره‌ای یخی با رنگ آبی کم‌رنگ"
     },
-    { 
-      "question": "اکسیژن", 
-      "answer": "گازی حیاتی برای تنفس موجودات زنده" 
+    {
+      "question": "نپتون",
+      "answer": "دورترین سیاره منظومه شمسی"
     },
-    { 
-      "question": "نیتروژن", 
-      "answer": "گازی بی‌رنگ و بی‌بو در هوا" 
+    {
+      "question": "تلسکوپ",
+      "answer": "ابزاری برای مشاهده اجرام آسمانی"
     },
-    { 
-      "question": "هیدروژن", 
-      "answer": "سبک‌ترین عنصر شیمیایی" 
+    {
+      "question": "میکروسکوپ",
+      "answer": "ابزاری برای دیدن اجسام بسیار کوچک"
     },
-    { 
-      "question": "کربن", 
-      "answer": "عنصری اساسی در ترکیب موجودات زنده" 
+    {
+      "question": "سلول",
+      "answer": "واحد سازنده موجودات زنده"
     },
-    { 
-      "question": "آهن", 
-      "answer": "فلزی سخت و پرکاربرد در صنعت" 
+    {
+      "question": "ژن",
+      "answer": "بخش کوچک DNA که ویژگی‌ها را تعیین می‌کند"
     },
-    { 
-      "question": "مس", 
-      "answer": "فلزی سرخ‌رنگ رسانای الکتریسیته" 
+    {
+      "question": "ویروس",
+      "answer": "عامل بیماری‌زا که در سلول تکثیر می‌شود"
     },
-    { 
-      "question": "طلا", 
-      "answer": "فلزی گران‌بها و کمیاب" 
+    {
+      "question": "باکتری",
+      "answer": "میکروارگانیسم تک‌سلولی بسیار کوچک"
     },
-    { 
-      "question": "نقره", 
-      "answer": "فلزی سفید و براق با ارزش زینتی" 
+    {
+      "question": "انرژی",
+      "answer": "توانایی انجام کار یا حرکت"
     },
-    { 
-      "question": "الماس", 
-      "answer": "سنگی قیمتی و بسیار سخت" 
+    {
+      "question": "نور",
+      "answer": "شکلی از انرژی که دیده می‌شود"
     },
-    { 
-      "question": "یاقوت", 
-      "answer": "سنگ قیمتی سرخ‌رنگ" 
+    {
+      "question": "صوت",
+      "answer": "امواجی که از ارتعاش اجسام ایجاد می‌شود"
     },
-    { 
-      "question": "زمرد", 
-      "answer": "سنگ قیمتی سبز و شفاف" 
+    {
+      "question": "حرارت",
+      "answer": "شکل انرژی مربوط به گرما"
     },
-    { 
-      "question": "مروارید", 
-      "answer": "گوهر طبیعی درون صدف" 
+    {
+      "question": "فشار",
+      "answer": "نیروی وارد شده بر سطح"
     },
-    { 
-      "question": "دریاچه", 
-      "answer": "آبگیر بزرگ محصور در خشکی" 
+    {
+      "question": "اکسیژن",
+      "answer": "گازی حیاتی برای تنفس موجودات زنده"
     },
-    { 
-      "question": "چشمه", 
-      "answer": "جریان طبیعی آب از دل زمین" 
+    {
+      "question": "نیتروژن",
+      "answer": "گازی بی‌رنگ و بی‌بو در هوا"
     },
-    { 
-      "question": "آبشار", 
-      "answer": "جریان آب که از بلندی فرو می‌ریزد" 
+    {
+      "question": "هیدروژن",
+      "answer": "سبک‌ترین عنصر شیمیایی"
     },
-    { 
-      "question": "بیابان", 
-      "answer": "منطقه‌ای خشک و کم‌آب" 
+    {
+      "question": "کربن",
+      "answer": "عنصری اساسی در ترکیب موجودات زنده"
     },
-    { 
-      "question": "مرکز", 
-      "answer": "نقطه میانی یک فضا یا جسم" 
+    {
+      "question": "آهن",
+      "answer": "فلزی سخت و پرکاربرد در صنعت"
     },
-    { 
-      "question": "دایره", 
-      "answer": "شکلی هندسی با فاصله یکسان از مرکز" 
+    {
+      "question": "مس",
+      "answer": "فلزی سرخ‌رنگ رسانای الکتریسیته"
     },
-    { 
-      "question": "مربع", 
+    {
+      "question": "طلا",
+      "answer": "فلزی گران‌بها و کمیاب"
+    },
+    {
+      "question": "نقره",
+      "answer": "فلزی سفید و براق با ارزش زینتی"
+    },
+    {
+      "question": "الماس",
+      "answer": "سنگی قیمتی و بسیار سخت"
+    },
+    {
+      "question": "یاقوت",
+      "answer": "سنگ قیمتی سرخ‌رنگ"
+    },
+    {
+      "question": "زمرد",
+      "answer": "سنگ قیمتی سبز و شفاف"
+    },
+    {
+      "question": "مروارید",
+      "answer": "گوهر طبیعی درون صدف"
+    },
+    {
+      "question": "دریاچه",
+      "answer": "آبگیر بزرگ محصور در خشکی"
+    },
+    {
+      "question": "چشمه",
+      "answer": "جریان طبیعی آب از دل زمین"
+    },
+    {
+      "question": "آبشار",
+      "answer": "جریان آب که از بلندی فرو می‌ریزد"
+    },
+    {
+      "question": "بیابان",
+      "answer": "منطقه‌ای خشک و کم‌آب"
+    },
+    {
+      "question": "مرکز",
+      "answer": "نقطه میانی یک فضا یا جسم"
+    },
+    {
+      "question": "دایره",
+      "answer": "شکلی هندسی با فاصله یکسان از مرکز"
+    },
+    {
+      "question": "مربع",
       "answer": "شکلی هندسی با چهار ضلع مساوی"
     },
-    { 
-      "question": "مثلث", 
-      "answer": "شکلی هندسی با سه ضلع" 
+    {
+      "question": "مثلث",
+      "answer": "شکلی هندسی با سه ضلع"
     },
-    { 
-      "question": "مستطیل", 
-      "answer": "شکلی هندسی با اضلاع متقابل برابر" 
+    {
+      "question": "مستطیل",
+      "answer": "شکلی هندسی با اضلاع متقابل برابر"
     },
-    { 
-      "question": "خط", 
-      "answer": "مجموعه بی‌نهایت نقطه در یک امتداد" 
+    {
+      "question": "خط",
+      "answer": "مجموعه بی‌نهایت نقطه در یک امتداد"
     },
-    { 
-      "question": "زاویه", 
-      "answer": "فضای بین دو خط که همدیگر را قطع می‌کنند" 
+    {
+      "question": "زاویه",
+      "answer": "فضای بین دو خط که همدیگر را قطع می‌کنند"
     },
-    { 
+    {
       "question": "عدد",
-      "answer": "نمادی برای شمارش یا اندازه‌گیری" 
+      "answer": "نمادی برای شمارش یا اندازه‌گیری"
     },
-    { 
-      "question": "جمع", 
-      "answer": "عمل ریاضی برای به‌دست آوردن کل" 
+    {
+      "question": "جمع",
+      "answer": "عمل ریاضی برای به‌دست آوردن کل"
     },
-    { 
-      "question": "تفریق", 
-      "answer": "عمل ریاضی برای کم‌کردن مقدار" 
+    {
+      "question": "تفریق",
+      "answer": "عمل ریاضی برای کم‌کردن مقدار"
     },
-    { 
-      "question": "ضرب", 
-      "answer": "عمل ریاضی برای تکرار عدد" 
+    {
+      "question": "ضرب",
+      "answer": "عمل ریاضی برای تکرار عدد"
     },
-    { 
-      "question": "تقسیم", 
-      "answer": "عمل ریاضی برای بخش کردن مقدار" 
+    {
+      "question": "تقسیم",
+      "answer": "عمل ریاضی برای بخش کردن مقدار"
     },
-    { 
-      "question": "دماسنج", 
+    {
+      "question": "دماسنج",
       "answer": "ابزاری برای اندازه‌گیری دما"
     },
-    { 
-      "question": "فشارسنج", 
-      "answer": "ابزاری برای اندازه‌گیری فشار هوا" 
+    {
+      "question": "فشارسنج",
+      "answer": "ابزاری برای اندازه‌گیری فشار هوا"
     },
-    { 
-      "question": "سرعت", 
-      "answer": "میزان جابه‌جایی در زمان" 
+    {
+      "question": "سرعت",
+      "answer": "میزان جابه‌جایی در زمان"
     },
-    { 
-      "question": "شتاب", 
-      "answer": "تغییر سرعت در واحد زمان" 
+    {
+      "question": "شتاب",
+      "answer": "تغییر سرعت در واحد زمان"
     },
-    { 
-      "question": "وزن", 
-      "answer": "نیروی جاذبه وارد بر جرم" 
+    {
+      "question": "وزن",
+      "answer": "نیروی جاذبه وارد بر جرم"
     },
-    { 
-      "question": "جرم", 
-      "answer": "مقدار ماده موجود در جسم" 
+    {
+      "question": "جرم",
+      "answer": "مقدار ماده موجود در جسم"
     },
-    { 
-      "question": "ارتفاع", 
-      "answer": "فاصله عمودی از سطح زمین" 
+    {
+      "question": "ارتفاع",
+      "answer": "فاصله عمودی از سطح زمین"
     },
-    { 
-      "question": "عمق", 
-      "answer": "فاصله از سطح تا پایین" 
+    {
+      "question": "عمق",
+      "answer": "فاصله از سطح تا پایین"
     },
-    { 
-      "question": "عرض", 
-      "answer": "پهنا یا فاصله افقی" 
+    {
+      "question": "عرض",
+      "answer": "پهنا یا فاصله افقی"
     },
-    { 
-      "question": "طول", 
-      "answer": "اندازه در امتداد یک راستا" 
+    {
+      "question": "طول",
+      "answer": "اندازه در امتداد یک راستا"
     },
-    { 
-      "question": "قطر", 
-      "answer": "خطی که مرکز دایره را قطع می‌کند" 
+    {
+      "question": "قطر",
+      "answer": "خطی که مرکز دایره را قطع می‌کند"
     },
-    { 
-      "question": "شعاع", 
-      "answer": "فاصله مرکز دایره تا محیط" 
+    {
+      "question": "شعاع",
+      "answer": "فاصله مرکز دایره تا محیط"
     },
-    { 
-      "question": "حجم", 
-      "answer": "فضایی که جسم اشغال می‌کند" 
+    {
+      "question": "حجم",
+      "answer": "فضایی که جسم اشغال می‌کند"
     },
-    { 
-      "question": "سطح", 
-      "answer": "روی بیرونی یا مساحت یک جسم" 
+    {
+      "question": "سطح",
+      "answer": "روی بیرونی یا مساحت یک جسم"
     },
-    { 
-      "question": "ماده", 
-      "answer": "هرچیزی که جرم و حجم داشته باشد" 
+    {
+      "question": "ماده",
+      "answer": "هرچیزی که جرم و حجم داشته باشد"
     },
-    { 
-      "question": "جامد", 
+    {
+      "question": "جامد",
       "answer": "حالتی از ماده با شکل ثابت"
     },
-    { 
-      "question": "مایع", 
-      "answer": "حالتی از ماده که جاری می‌شود" 
+    {
+      "question": "مایع",
+      "answer": "حالتی از ماده که جاری می‌شود"
     },
-    { 
-      "question": "گاز", 
-      "answer": "حالتی از ماده که آزادانه حرکت می‌کند" 
+    {
+      "question": "گاز",
+      "answer": "حالتی از ماده که آزادانه حرکت می‌کند"
     },
-    { 
-      "question": "بخار", 
-      "answer": "حالت گازی مایعات پس از گرم‌شدن" 
+    {
+      "question": "بخار",
+      "answer": "حالت گازی مایعات پس از گرم‌شدن"
     },
-    { 
-      "question": "ابر", 
-      "answer": "توده‌ای از بخار آب در آسمان" 
+    {
+      "question": "ابر",
+      "answer": "توده‌ای از بخار آب در آسمان"
     },
-    { 
-      "question": "رعد", 
-      "answer": "صدای ناشی از تخلیه الکتریکی در آسمان" 
+    {
+      "question": "رعد",
+      "answer": "صدای ناشی از تخلیه الکتریکی در آسمان"
     },
-    { 
-      "question": "برق", 
-      "answer": "انرژی حاصل از جریان الکترون‌ها" 
+    {
+      "question": "برق",
+      "answer": "انرژی حاصل از جریان الکترون‌ها"
     },
-    { 
-      "question": "قوس", 
-      "answer": "خط خمیده یا انحنادار" 
+    {
+      "question": "قوس",
+      "answer": "خط خمیده یا انحنادار"
     },
-    { 
-      "question": "پلک", 
-      "answer": "پوست متحرک روی چشم" 
+    {
+      "question": "پلک",
+      "answer": "پوست متحرک روی چشم"
     },
-    { 
-      "question": "ابرو", 
-      "answer": "موی بالای چشم برای حفاظت" 
+    {
+      "question": "ابرو",
+      "answer": "موی بالای چشم برای حفاظت"
     },
-    { 
-      "question": "مژه", 
-      "answer": "موهای ریز لبه پلک" 
+    {
+      "question": "مژه",
+      "answer": "موهای ریز لبه پلک"
     },
-    { 
-      "question": "لب", 
-      "answer": "بخش نرم دهان برای گفتار و خوردن" 
+    {
+      "question": "لب",
+      "answer": "بخش نرم دهان برای گفتار و خوردن"
     },
-    { 
-      "question": "زبان", 
-    "answer": "اندام گفتار و چشایی" 
+    {
+      "question": "زبان",
+      "answer": "اندام گفتار و چشایی"
     },
-    { 
-      "question": "دندان", 
-      "answer": "اندام سخت در دهان برای جویدن" 
+    {
+      "question": "دندان",
+      "answer": "اندام سخت در دهان برای جویدن"
     },
-    { 
-      "question": "ریه", 
-      "answer": "اندام تنفسی انسان" 
+    {
+      "question": "ریه",
+      "answer": "اندام تنفسی انسان"
     },
-    { 
-      "question": "قلب", 
-      "answer": "اندامی که خون را در بدن پمپاژ می‌کند" 
+    {
+      "question": "قلب",
+      "answer": "اندامی که خون را در بدن پمپاژ می‌کند"
     },
-    { 
-      "question": "مغز", 
-      "answer": "مرکز فرماندهی بدن و فکر" 
+    {
+      "question": "مغز",
+      "answer": "مرکز فرماندهی بدن و فکر"
     },
-    { 
-      "question": "کبد", 
+    {
+      "question": "کبد",
       "answer": "اندام تصفیه خون و متابولیسم"
     },
-    { 
-      "question": "کلیه", 
-      "answer": "اندامی برای تصفیه خون و تولید ادرار" 
+    {
+      "question": "کلیه",
+      "answer": "اندامی برای تصفیه خون و تولید ادرار"
     },
-    { 
-      "question": "پوست", 
-      "answer": "بیرونی‌ترین لایه بدن انسان" 
+    {
+      "question": "پوست",
+      "answer": "بیرونی‌ترین لایه بدن انسان"
     },
-    { 
-      "question": "استخوان", 
-      "answer": "بخش سخت بدن برای استقامت" 
+    {
+      "question": "استخوان",
+      "answer": "بخش سخت بدن برای استقامت"
     },
-    { 
-      "question": "ماهیچه", 
-      "answer": "بافتی که باعث حرکت بدن می‌شود" 
+    {
+      "question": "ماهیچه",
+      "answer": "بافتی که باعث حرکت بدن می‌شود"
     },
-    { 
-      "question": "خون", 
-      "answer": "مایعی حیاتی برای انتقال اکسیژن" 
+    {
+      "question": "خون",
+      "answer": "مایعی حیاتی برای انتقال اکسیژن"
     },
-    { 
-      "question": "عصب", 
-      "answer": "رشته‌هایی که پیام‌های بدن را منتقل می‌کنند" 
+    {
+      "question": "عصب",
+      "answer": "رشته‌هایی که پیام‌های بدن را منتقل می‌کنند"
     },
-    { 
-      "question": "شبکه", 
-      "answer": "مجموعه‌ای از ارتباطات یا اتصالات" 
+    {
+      "question": "شبکه",
+      "answer": "مجموعه‌ای از ارتباطات یا اتصالات"
     },
-    { 
-      "question": "کامپیوتر", 
-      "answer": "دستگاهی برای پردازش داده‌ها" 
+    {
+      "question": "کامپیوتر",
+      "answer": "دستگاهی برای پردازش داده‌ها"
     },
-    { 
-      "question": "اینترنت", 
-      "answer": "شبکه جهانی ارتباطات رایانه‌ای" 
+    {
+      "question": "اینترنت",
+      "answer": "شبکه جهانی ارتباطات رایانه‌ای"
     },
-    { 
-      "question": "موبایل", 
-      "answer": "وسیله‌ای برای ارتباط و کارهای دیجیتال" 
+    {
+      "question": "موبایل",
+      "answer": "وسیله‌ای برای ارتباط و کارهای دیجیتال"
     },
-    { 
-      "question": "رایانه", 
-      "answer": "نام فارسی کامپیوتر" 
+    {
+      "question": "رایانه",
+      "answer": "نام فارسی کامپیوتر"
     },
-    { 
-      "question": "رمز", 
+    {
+      "question": "رمز",
       "answer": "نشانه یا کدی برای امنیت یا معنا"
     },
-    { 
-      "question": "داده", 
-      "answer": "اطلاعات خام و پردازش‌ نشده" 
+    {
+      "question": "داده",
+      "answer": "اطلاعات خام و پردازش‌ نشده"
     },
-    { 
-      "question": "Sun", 
-      "answer": "The star at the center of our solar system" 
+    {
+      "question": "Sun",
+      "answer": "The star at the center of our solar system"
     },
-    { 
-      "question": "Moon", 
-      "answer": "Earth's natural satellite" 
+    {
+      "question": "Moon",
+      "answer": "Earth's natural satellite"
     },
-    { 
-      "question": "Star", 
-      "answer": "A luminous sphere of plasma in space" 
+    {
+      "question": "Star",
+      "answer": "A luminous sphere of plasma in space"
     },
-    { 
-      "question": "Planet", 
-      "answer": "A celestial body orbiting a star" 
+    {
+      "question": "Planet",
+      "answer": "A celestial body orbiting a star"
     },
-    { 
-      "question": "Galaxy", 
-      "answer": "A system of stars, gas, and dust bound by gravity" 
+    {
+      "question": "Galaxy",
+      "answer": "A system of stars, gas, and dust bound by gravity"
     },
-    { "question": "Universe", 
-    "answer": "All space, time, matter, and energy" 
+    {
+      "question": "Universe",
+      "answer": "All space, time, matter, and energy"
     },
-    { 
-      "question": "Atom", 
-      "answer": "The smallest unit of matter" 
+    {
+      "question": "Atom",
+      "answer": "The smallest unit of matter"
     },
-    { 
-      "question": "Molecule", 
-      "answer": "Two or more atoms bonded together" 
+    {
+      "question": "Molecule",
+      "answer": "Two or more atoms bonded together"
     },
-    { 
-      "question": "Energy", 
-      "answer": "The ability to do work" 
+    {
+      "question": "Energy",
+      "answer": "The ability to do work"
     },
-    { 
-      "question": "Force", 
-      "answer": "A push or pull on an object" 
+    {
+      "question": "Force",
+      "answer": "A push or pull on an object"
     },
-    { 
-      "question": "Light", 
-      "answer": "Visible form of electromagnetic radiation" 
+    {
+      "question": "Light",
+      "answer": "Visible form of electromagnetic radiation"
     },
-    { 
-      "question": "Sound", 
-      "answer": "Vibrations that travel through air or another medium" 
+    {
+      "question": "Sound",
+      "answer": "Vibrations that travel through air or another medium"
     },
-    { 
-      "question": "Heat", 
-      "answer": "Form of energy related to temperature" 
+    {
+      "question": "Heat",
+      "answer": "Form of energy related to temperature"
     },
-    { 
-      "question": "Water", 
-      "answer": "A liquid essential for life" 
+    {
+      "question": "Water",
+      "answer": "A liquid essential for life"
     },
-    { 
-      "question": "Air", 
-      "answer": "The invisible mixture of gases we breathe" 
+    {
+      "question": "Air",
+      "answer": "The invisible mixture of gases we breathe"
     },
-    { 
-      "question": "Fire", 
-      "answer": "The result of combustion producing heat and light" 
+    {
+      "question": "Fire",
+      "answer": "The result of combustion producing heat and light"
     },
-    { 
-      "question": "Earth", 
-      "answer": "The planet we live on" 
+    {
+      "question": "Earth",
+      "answer": "The planet we live on"
     },
-    { 
-      "question": "Ocean", 
-      "answer": "A vast body of saltwater" 
+    {
+      "question": "Ocean",
+      "answer": "A vast body of saltwater"
     },
-    { 
-      "question": "River", 
-      "answer": "A large stream of flowing water" 
+    {
+      "question": "River",
+      "answer": "A large stream of flowing water"
     },
-    { 
-      "question": "Lake", 
-      "answer": "A large body of water surrounded by land" 
+    {
+      "question": "Lake",
+      "answer": "A large body of water surrounded by land"
     },
-    { 
-      "question": "Mountain", 
-      "answer": "A large natural elevation of the Earth's surface" 
+    {
+      "question": "Mountain",
+      "answer": "A large natural elevation of the Earth's surface"
     },
-    { 
-      "question": "Valley", 
-      "answer": "A low area between hills or mountains" 
+    {
+      "question": "Valley",
+      "answer": "A low area between hills or mountains"
     },
-    { 
-      "question": "Forest", 
-      "answer": "A large area covered with trees" 
+    {
+      "question": "Forest",
+      "answer": "A large area covered with trees"
     },
-    { 
-      "question": "Desert", 
-      "answer": "A dry region with little rainfall" 
+    {
+      "question": "Desert",
+      "answer": "A dry region with little rainfall"
     },
-    { 
-      "question": "Island", 
-      "answer": "A piece of land surrounded by water" 
+    {
+      "question": "Island",
+      "answer": "A piece of land surrounded by water"
     },
-    { 
-      "question": "Bridge", 
-      "answer": "A structure built to cross obstacles" 
+    {
+      "question": "Bridge",
+      "answer": "A structure built to cross obstacles"
     },
-    { 
-      "question": "Road", 
-      "answer": "A path made for vehicles or walking" 
+    {
+      "question": "Road",
+      "answer": "A path made for vehicles or walking"
     },
-    { 
-      "question": "Car", 
-      "answer": "A motor vehicle with wheels" 
+    {
+      "question": "Car",
+      "answer": "A motor vehicle with wheels"
     },
-    { 
-      "question": "Train", 
-      "answer": "A series of connected vehicles on tracks" 
+    {
+      "question": "Train",
+      "answer": "A series of connected vehicles on tracks"
     },
-    { 
-      "question": "Ship", 
-      "answer": "A large vessel for traveling on water" 
+    {
+      "question": "Ship",
+      "answer": "A large vessel for traveling on water"
     },
-    { 
-      "question": "Plane", 
-      "answer": "An aircraft that flies in the sky" 
+    {
+      "question": "Plane",
+      "answer": "An aircraft that flies in the sky"
     },
-    { 
-      "question": "Book", 
-      "answer": "A collection of written or printed pages" 
+    {
+      "question": "Book",
+      "answer": "A collection of written or printed pages"
     },
-    { 
-      "question": "Pen", 
-      "answer": "A tool for writing with ink" 
+    {
+      "question": "Pen",
+      "answer": "A tool for writing with ink"
     },
-    { 
-      "question": "Paper", 
-      "answer": "Thin material used for writing or printing" 
+    {
+      "question": "Paper",
+      "answer": "Thin material used for writing or printing"
     },
-    { 
-      "question": "Chair", 
-      "answer": "A piece of furniture to sit on" 
+    {
+      "question": "Chair",
+      "answer": "A piece of furniture to sit on"
     },
-    { 
-      "question": "Table", 
-      "answer": "A flat surface supported by legs" 
+    {
+      "question": "Table",
+      "answer": "A flat surface supported by legs"
     },
-    { 
-      "question": "Door", 
-      "answer": "A movable barrier for entry or exit" 
+    {
+      "question": "Door",
+      "answer": "A movable barrier for entry or exit"
     },
-    { 
-      "question": "Window", 
-      "answer": "An opening in a wall for light and air" 
+    {
+      "question": "Window",
+      "answer": "An opening in a wall for light and air"
     },
-    { 
-      "question": "House", 
-      "answer": "A building where people live" 
+    {
+      "question": "House",
+      "answer": "A building where people live"
     },
-    { 
-      "question": "School", 
-      "answer": "A place where students learn" 
+    {
+      "question": "School",
+      "answer": "A place where students learn"
     },
-    { 
-      "question": "Teacher", 
-      "answer": "A person who educates others" 
+    {
+      "question": "Teacher",
+      "answer": "A person who educates others"
     },
-    { 
-      "question": "Student", 
-      "answer": "A person who learns in school" 
+    {
+      "question": "Student",
+      "answer": "A person who learns in school"
     },
-    { 
-      "question": "Doctor", 
-      "answer": "A person trained to treat the sick" 
+    {
+      "question": "Doctor",
+      "answer": "A person trained to treat the sick"
     },
-    { 
-      "question": "Nurse", 
-      "answer": "A person who cares for patients" 
+    {
+      "question": "Nurse",
+      "answer": "A person who cares for patients"
     },
-    { 
-      "question": "Engineer", 
-      "answer": "A professional who designs and builds systems" 
+    {
+      "question": "Engineer",
+      "answer": "A professional who designs and builds systems"
     },
-    { 
-      "question": "Farmer", 
-      "answer": "A person who grows crops or raises animals" 
+    {
+      "question": "Farmer",
+      "answer": "A person who grows crops or raises animals"
     },
-    { 
-      "question": "Artist", 
-      "answer": "A person who creates art" 
+    {
+      "question": "Artist",
+      "answer": "A person who creates art"
     },
-    { 
-      "question": "Musician", 
-      "answer": "A person who plays or creates music" 
+    {
+      "question": "Musician",
+      "answer": "A person who plays or creates music"
     },
-    { 
-      "question": "Writer", 
-      "answer": "A person who composes books or texts" 
+    {
+      "question": "Writer",
+      "answer": "A person who composes books or texts"
+    },
+    {
+      "question": "دوسم داری؟",
+      "answer": "بله! البته که دارم خوشگله"
+    },
+    {
+      "question": "اها",
+      "answer": "اره"
+    },
+    {
+      "question": "اسمت",
+      "answer": "اسم من underfeel هستش عزیزم>-< من یک چت بات هستم"
+    },
+    {
+      "question": "یییییییییییییییییییییی",
+      "answer": "این حرفت نامفهومه، میشه دوباره جواب بدی؟"
+    },
+    {
+      "question": "خوبی",
+      "answer": "خوبم خیلی ممنون"
+    },
+    {
+      "question": "اب چیه",
+      "answer": "اب یک نوع نوشیدنی طبیعی هست که برای بدن لازم و ضروریه، پیشنهاد میشه روزی هشت لیوان اب بخوری!"
+    },
+    {
+      "question": "خب",
+      "answer": "جانم؟"
+    },
+    {
+      "question": "اسمت چیه",
+      "answer": "اسم من underfeel هستش، اسم تو چیه؟"
+    },
+    {
+      "question": "اب و هوا توی تابستون چطوره",
+      "answer": "خیلی گرمه! خیلی گرم.. میدونی؟"
+    },
+    {
+      "question": "عالیم",
+      "answer": "خیلی خوبه که عالی ای! خب چه خبرا؟"
+    },
+    {
+      "question": "هیچ، سلامتی، از تو چه خبر؟",
+      "answer": "خبر های خوش! همین که با تو حرف میزنم خودش عالیه!"
+    },
+    {
+      "question": "کاربرد تو چیه؟",
+      "answer": "من ی چت بات هستم که ازت یاد میگیرم! کافیه با من صحبت و تعامل داشته باشی تا هر روز بهتر شم! درست مثل بچه ای که پدر مادرش تربیتش میکنن!"
     }
-
   ]
 }
