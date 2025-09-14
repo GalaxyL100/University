@@ -25,7 +25,7 @@ from sumy.nlp.tokenizers import Tokenizer as SumyTokenizer
 from sumy.summarizers.text_rank import TextRankSummarizer
 
 # بارگذاری دیتاست احساسات
-df = pd.read_csv(r'C:\Users\Rad_Afzar\Documents\university file\final project\emotion_dataset.csv')
+df = pd.read_csv(r'C:\Users\pc\Documents\university file\final project\emotion_dataset.csv')
 
 
 # تعریف کلاس چت‌بات
@@ -49,15 +49,31 @@ class ChatBot:
 
     # پاسخ دادن به سوال کاربر با تطبیق سوالات قبلی
     def get_response(self, user_input: str) -> str:
-        questions = [q['question'] for q in self.data['questions']]
-        best_match = get_close_matches(user_input, questions, n=1, cutoff=0.6)
+        if not self.data or 'questions' not in self.data:
+            return None
+    
+        user_input_lower = user_input.strip().lower()
+    
+        # جستجوی دقیق
+        for q in self.data['questions']:
+            if q['question'].strip().lower() == user_input_lower:
+                return q['answer']
+    
+        # جستجوی جزئی 
+        for q in self.data['questions']:
+            if user_input_lower in q['question'].strip().lower():
+                return q['answer']
+            
+        for q in self.data['questions']:
 
-        if best_match:
-            for q in self.data['questions']:
-                if q['question'] == best_match[0]:
-                    return q['answer']
-        return None
+            question_words = q['question'].strip().lower().split()
+            user_words = user_input.strip().lower().split()
 
+            common_words = set(question_words) & set(user_words)
+            common_count = len(common_words)
+            if common_count >= 3:
+                return q['answer']
+           
     # یادگیری پاسخ جدید در صورت بلد نبودن
     def learn_new_answer(self, question: str, answer: str):
         self.data['questions'].append({'question': question, 'answer': answer})
@@ -504,7 +520,7 @@ class ChatUI(QWidget):
 # اجرای برنامه
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    bot = ChatBot(r"C:\Users\Rad_Afzar\Documents\university file\final project\data.json")
+    bot = ChatBot(r"C:\Users\pc\Documents\university file\final project\data.json")
     window = ChatUI(bot)
     window.show()
     sys.exit(app.exec())
