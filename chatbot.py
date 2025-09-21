@@ -289,7 +289,7 @@ class ChatUI(QWidget):
             self.setStyleSheet(themes[theme_name])
         
 
-    # ساخت رابط کاربری اصلی شامل سه تب
+    # ساخت رابط کاربری اصلی شامل چهار تب
     def init_ui(self):
         main_layout = QVBoxLayout(self)
         tabs = QTabWidget()
@@ -397,7 +397,7 @@ class ChatUI(QWidget):
     }}
         """)
 
-            tab4_layout.addWidget(btn)   # حتماً داخل حلقه باشه ✅
+            tab4_layout.addWidget(btn)  
 
 # دکمه ذخیره تم
         save_btn = QPushButton("💾 ذخیره تم")
